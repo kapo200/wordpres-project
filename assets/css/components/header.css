@@ -1,0 +1,185 @@
+/* --- Global Fix for Horizontal Scroll --- */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* --- Header Base --- */
+.site-header {
+    background-color: #F5F7FA;
+    padding: 16px 0;
+    border-bottom: 1px solid #E5E7EB;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-logo img {
+    max-height: 30px;
+    width: auto;
+}
+
+/* Navigation - Desktop */
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+/* მოიცავს WordPress-ის ყველა შესაძლო კლასს */
+.main-navigation ul,
+.main-navigation .header-menu,
+.main-navigation .nav-menu,
+.main-navigation .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #18191F;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a:hover {
+    color: #4CAF4F;
+}
+
+.header-action,
+.header-auth-buttons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Burger Button */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+}
+
+.burger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #263238;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* --- Responsive Mobile Styles --- */
+@media screen and (max-width: 991px) {
+    /* დამალე დესკტოპის ღილაკები */
+    .header-action,
+    .header-auth-buttons {
+        display: none !important;
+    }
+
+    /* გამოაჩინე ბურგერ ღილაკი */
+    .burger-menu {
+        display: flex !important;
+    }
+
+    /* მობილური ნავიგაციის პანელი */
+    .main-navigation {
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important; /* მენიუ გადადის მარჯვნივ ეკრანს მიღმა */
+        width: 280px !important;
+        height: 100vh !important;
+        background-color: #ffffff !important;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15) !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 80px 30px 40px !important;
+        transition: right 0.3s ease-in-out !important;
+        z-index: 1001 !important;
+    }
+
+    /* მენიუს გახსნა */
+    .main-navigation.active {
+        right: 0 !important;
+    }
+
+    /* WordPress-ის შიდა UL სიის გასწორება მობილურზე */
+    .main-navigation ul,
+    .main-navigation .header-menu,
+    .main-navigation .nav-menu,
+    .main-navigation .menu,
+    .main-navigation div > ul {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    /* მობილური ავტორიზაციის ღილაკები */
+    .mobile-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 30px !important;
+        width: 100% !important;
+    }
+
+    .mobile-actions a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* ბურგერის X ანიმაცია */
+    .burger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Overlay */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,179 @@
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #4D4D4D;
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   2. Header & Branding
+   ========================================== */
+.site-header {
+    background-color: #FFFFFF;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: #263238;
+}
+
+.site-logo-img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.logo-accent {
+    color: #4CAF4F;
+}
+
+/* ==========================================
+   3. Header Navigation & Auth Buttons
+   ========================================== */
+.main-navigation .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #18191F;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-navigation a:hover {
+    color: #4CAF4F;
+}
+
+.header-auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-login {
+    color: #4CAF4F;
+    padding: 10px 20px;
+}
+
+.btn-login:hover {
+    background-color: #F5F7FA;
+}
+
+.btn-signup,
+.btn-primary {
+    background-color: #4CAF4F;
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+}
+
+.btn-signup:hover,
+.btn-primary:hover {
+    background-color: #3B923E;
+}
+
+/* ==========================================
+   4. Hero Section
+   ========================================== */
+.hero-section {
+    background-color: #F5F7FA;
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #4D4D4D;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero-title .highlight {
+    color: #4CAF4F;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #717171;
+    margin-bottom: 32px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 390px;
+    height: auto;
+    display: block;
+}
+
+.placeholder-image {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background-color: #E8F5E9;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #4CAF4F;
+    font-weight: 600;
+}
